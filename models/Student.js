@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs'; // switched from 'bcrypt' to 'bcryptjs'
 
 const studentSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -11,7 +11,7 @@ const studentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Submission'
   }],
-  createdAt: { type: Date, default: Date.now } ,
+  createdAt: { type: Date, default: Date.now },
   isAdmin: { type: Boolean, default: false }
 });
 
